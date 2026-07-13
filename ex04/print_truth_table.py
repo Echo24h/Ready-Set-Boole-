@@ -99,6 +99,12 @@ def print_truth_table(formula: str) -> None:
     | 1 | 1 | 0 | 1 |
     | 1 | 1 | 1 | 1 |
     """
+    if not formula:
+        raise ValueError("Formula cannot be empty.")
+
+    if any(char not in "ABCDEFGHIJKLMNOPQRSTUVWXYZ!&|^>=" for char in formula):
+        raise ValueError("Formula contains invalid characters. Only A-Z and !&|^>= are allowed.")
+
     # Extract unique variables from the formula
     variables = []
     for char in formula:
