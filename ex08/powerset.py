@@ -22,7 +22,7 @@ def powerset(set: list[int]) -> list[list[int]]:
 
 
 if __name__ == "__main__":
-    A = [4, 5, 6]
+    A = [1, 2, 3]
     P = powerset(A)
     for subset in P:
         print(subset)
