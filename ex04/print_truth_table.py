@@ -120,7 +120,7 @@ def print_truth_table(formula: str) -> None:
     print("|" + "---|" * num_vars + "---|")
 
     # Try every possible combination of True/False
-    num_combinations = 2 ** num_vars
+    num_combinations = 1 << num_vars # 2 ** num_vars
 
     for combination in range(num_combinations):
 
@@ -155,6 +155,6 @@ def print_truth_table(formula: str) -> None:
 
 if __name__ == "__main__":
 
-    formula = "AB&C|"
+    formula = "AB&CD||"
 
     print_truth_table(formula)

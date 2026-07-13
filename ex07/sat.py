@@ -89,7 +89,9 @@ def sat(formula: str) -> bool:
     variables = sorted(set(filter(str.isalpha, formula)))
     num_vars = len(variables)
 
-    for combination in range(2 ** num_vars):
+    num_combinations = 1 << num_vars # 2 ** num_vars
+    
+    for combination in range(num_combinations):
         # Turn the number "combination" into a sequence of bits.
         # Example: for 4 variables, combination 5 (0101 in binary) means A = 0, B = 1, C = 0, D = 1
         values = []
